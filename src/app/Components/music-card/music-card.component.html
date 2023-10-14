@@ -1,0 +1,11 @@
+<div *ngIf="music != undefined" class="ms-1 container">
+  <div class="card" style="width: 20.7rem;">
+    <img *ngIf="'music'" src="{{music.album.cover_medium}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{music.title}}</h5>
+      <p style="font-size: 0.8rem;" class="card-text">By {{music.artist.name}}</p>
+      <audio controls src="{{music.preview}}"></audio>
+      <button (click)="onClick()" class="btn btn-primary">Go somewhere</button>
+    </div>
+  </div>
+</div>

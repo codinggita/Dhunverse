@@ -1,20 +1,18 @@
-import { Component, EventEmitter, Output } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnInit {
   @Output() newItemEvent = new EventEmitter<string>();
   search = '';
-  searchForm = this.fb.nonNullable.group({
-    search:'',
-  })
-  constructor(private fb: FormBuilder){}
-  onChange(value: string){
-    this.search = value ?? "";
+  constructor(){}
+  onChange(){
     this.newItemEvent.emit(this.search);
+  }
+  ngOnInit(): void {
+      
   }
 }
