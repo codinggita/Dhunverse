@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { MusicApiService } from './services/music-api.service';
+import { NavbarComponent } from './Components/navbar/navbar.component';
+import { LoginComponent } from './Components/login/login.component';
 
 
 @Component({
@@ -9,21 +11,8 @@ import { MusicApiService } from './services/music-api.service';
 })
 export class AppComponent {
   title = 'Dhunverse';
-  s = '';
-  musicList = []
-  onChange(Search: string){
-    this.s = Search;
-    this.MusicApiService.getSearchMusic(this.s)
-      .then(response => {
-        this.musicList = (response.data.data)
-      })
-      .catch(error => {
-        console.log(error);
-      });
-  }
-  constructor(private MusicApiService: MusicApiService){}
+  
   // getSongs() {
     
   // }
-
 }

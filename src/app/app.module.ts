@@ -8,6 +8,7 @@ import { JokePageComponent } from './Components/joke-page/joke-page.component';
 import { MusicCardComponent } from './Components/music-card/music-card.component';
 import { MusicPageComponent } from './Components/music-page/music-page.component';
 import { FormsModule } from '@angular/forms';
+import { AppMainComponent } from './app-main/app-main.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { FormsModule } from '@angular/forms';
     NavbarComponent,
     JokePageComponent,
     MusicCardComponent,
-    MusicPageComponent
+    MusicPageComponent,
+    AppMainComponent,
   ],
   imports: [
     BrowserModule,
