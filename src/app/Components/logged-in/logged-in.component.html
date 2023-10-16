@@ -1,1 +1,14 @@
-<app-navbar-mkain [username]="username"></app-navbar-mkain>
+<app-navbar-mkain [username]="username"  (newItemEvent)="onChange($event)"></app-navbar-mkain>
+<div class="container-fluid">
+  <!-- <app-joke-page></app-joke-page>/ -->
+  <div  class="mt-2" [ngSwitch]="s">
+     <p *ngSwitchCase="''"></p>
+     <p class="my-2" style="font-size: 1.5rem; font-weight: bold; text-align: center;" *ngSwitchDefault>Search results for " {{s}} "</p>
+  </div>
+  <div class="container">
+    <!-- <button (click)="getSongs()">click</button> -->
+    <div id="music-list">
+      <app-music-page [musicList]="musicList"></app-music-page>
+    </div>
+  </div>
+</div>

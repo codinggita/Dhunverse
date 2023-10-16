@@ -17,6 +17,10 @@
         </li>
         
       </ul>
+      <form class="d-flex me-auto align-text-center" role="search">
+        <input [(ngModel)]="search" class="form-control me-2 px-3" style="width: 40vw;" placeholder="Search" name="search" (keyup)="onChange()">
+        <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
+      </form>
       <ul class="navbar-nav">
         <li class="nav-item">
           <form (click)="handleLogout()" style="cursor: pointer;" class="form-inline my-2 my-lg-0">
