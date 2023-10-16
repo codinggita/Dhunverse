@@ -7,17 +7,11 @@ import { Component, Input } from '@angular/core';
 })
 export class MusicCardComponent {
   @Input() music:any;
-  
+  duration:string='';
 
   constructor(){
-    type Music = {
-      [key: string]: any;
-      title?: string;
-      image?: string;
-    };
     this.music={}
   }
-
   onClick(){
     console.log(this.music)
   }
