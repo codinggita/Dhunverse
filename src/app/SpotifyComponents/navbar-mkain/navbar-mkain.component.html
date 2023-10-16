@@ -1,0 +1,32 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary p-3">
+  <div class="container-fluid">
+    <a class="navbar-brand fs-4 align-text-center fw-bolder" routerLink="/main">
+      <img src="../assets/Untitled (2)_prev_ui.png" alt="Logo" width="38" height="38" class="d-inline-block align-text-top">
+      <span class="ms-2">Dhunverse</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/main">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/about">About Us</a>
+        </li>
+        
+      </ul>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <form (click)="handleLogout()" style="cursor: pointer;" class="form-inline my-2 my-lg-0">
+            <span *ngIf="username===''">UserName&nbsp;&nbsp;</span>
+            <span *ngIf="username!==''">{{username}}&nbsp;&nbsp;</span>
+            <img class="img-thumbnail rounded-circle" style="width: 50px; height: 50px;" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(3).jpg">
+        </form>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</nav>

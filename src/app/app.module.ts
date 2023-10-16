@@ -9,6 +9,8 @@ import { MusicCardComponent } from './Components/music-card/music-card.component
 import { MusicPageComponent } from './Components/music-page/music-page.component';
 import { FormsModule } from '@angular/forms';
 import { AppMainComponent } from './app-main/app-main.component';
+import { LoggedInComponent } from './Components/logged-in/logged-in.component';
+import { NavbarMkainComponent } from './SpotifyComponents/navbar-mkain/navbar-mkain.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { AppMainComponent } from './app-main/app-main.component';
     MusicCardComponent,
     MusicPageComponent,
     AppMainComponent,
+    LoggedInComponent,
+    NavbarMkainComponent,
   ],
   imports: [
     BrowserModule,
