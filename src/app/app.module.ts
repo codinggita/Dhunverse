@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { AppMainComponent } from './app-main/app-main.component';
 import { LoggedInComponent } from './Components/logged-in/logged-in.component';
 import { NavbarMkainComponent } from './SpotifyComponents/navbar-mkain/navbar-mkain.component';
+import { AboutPageComponent } from './Components/about-page/about-page.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { NavbarMkainComponent } from './SpotifyComponents/navbar-mkain/navbar-mk
     AppMainComponent,
     LoggedInComponent,
     NavbarMkainComponent,
+    AboutPageComponent,
   ],
   imports: [
     BrowserModule,
