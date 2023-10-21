@@ -1,13 +1,13 @@
 <nav class="navbar navbar-expand-lg bg-dark p-3">
   <div class="container-fluid">
     <a class="navbar-brand fs-4 align-text-center fw-bolder" routerLink="/">
-      <img src="../assets/Untitled (2)_prev_ui.png" alt="Logo" width="38" height="38" class="d-inline-block align-text-top">
+      <img src="../assets/Untitled_prev_ui.png" alt="Logo" width="38" height="38" class="d-inline-block align-text-top">
       <span class="ms-2 text-white">Dhunverse</span>
     </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <a class="nav-link active text-white" aria-current="page" routerLink="/">Home</a>
@@ -23,17 +23,17 @@
             <li><a class="dropdown-item text-white" href="#">Action</a></li>
             <li><a class="dropdown-item text-white" href="#">Another action</a></li>
             <li><hr class="dropdown-divider bg-white"></li>
-            <li><a class="dropdown-item text-white" href="#">Something else here</a></li>
+            <li><a class="dropdown-item text-white" onMouseOver="this.style.color='white'" onMouseOut="this.style.color='black'" href="#">Something else here</a></li>
           </ul>
         </li>
       </ul>
       <form class="d-flex me-auto align-text-center" role="search">
-        <input [(ngModel)]="search" class="form-control me-2 px-3 bg-body-tertiary text-dark fs-5" style="width: 40vw;" placeholder="Search" name="search" (keyup)="onChange()">
+        <input [(ngModel)]="search" class="form-control me-2 px-3 bg-body-tertiary text-dark fs-5 text-center" placeholder="Search" name="search" (keyup)="onChange()">
         <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
       </form>
       <ul class="navbar-nav">
         <li class="nav-item">
-          <button class="btn btn-primary btn-sm" style="border-radius: 30%;">
+          <button class="btn btn-primary btn-sm mt-2" style="border-radius: 30%;">
             <a class="nav-link" routerLink="/login">Login</a>
           </button>
         </li>
