@@ -19,5 +19,5 @@ export class SpotifyApiService {
 
     return axios.post(this.SPOTIFY_API_URL, data, { headers });
   }
-
+  
 }

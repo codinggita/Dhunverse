@@ -14,11 +14,11 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     $(window).on('load', () => {
       setTimeout(() => {
-        $(".main-loader").slideUp(1000, () => {
+        $(".main-loader").slideUp(50, () => {
           // Animation duration set to 1 second (1000 milliseconds)
           $(".main-loader").remove(); // Remove the loader after the animation
         });
-      }, 2000); // Delay for 2 seconds (2000 milliseconds) before starting the animation
+      }, 100); // Delay for 2 seconds (2000 milliseconds) before starting the animation
     });
   }
 }

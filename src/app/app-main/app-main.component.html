@@ -1,44 +1,28 @@
 <!-- <router-outlet></router-outlet> -->
 <app-navbar (newItemEvent)="onChange($event)"></app-navbar>
+<div class="jumbotron container-fluid p-4 bg-secondary">
+  <h1 class="display-4">Discover and Stream Music</h1>
+  <p class="lead">Your favorite tracks, anytime, anywhere.</p>
+  <a class="btn btn-primary btn-lg" routerLink="/login" role="button">Get Started</a>
+</div>
 <div class="container-fluid bg-secondary">
   <!-- <app-joke-page></app-joke-page>/ -->
+  
   <div [ngSwitch]="s">
      <p *ngSwitchCase="''"></p>
      <p class="text-white fs-3 fw-bold text-center"  *ngSwitchDefault>Search results for " {{s}} "</p>
   </div>
-  <div class="container">
+  <div *ngIf="s != ''" class="container">
     <!-- <button (click)="getSongs()">click</button> -->
     <div id="music-list">
       <app-music-page [musicList]="musicList"></app-music-page>
     </div>
   </div>
 </div>
-<div class="jumbotron container-fluid p-2 bg-secondary">
-  <h1 class="display-4">Discover and Stream Music</h1>
-  <p class="lead">Your favorite tracks, anytime, anywhere.</p>
-  <a class="btn btn-primary btn-lg" href="#" role="button">Get Started</a>
-</div>
 
-<!-- Content Section -->
-<div class="container-fluid mt-5 bg-secondary">
-  <div class="row">
-    <div class="col-md-4">
-      <h2>Popular Tracks</h2>
-      <!-- Add your content here -->
-    </div>
-    <div class="col-md-4">
-      <h2>Recommended Playlists</h2>
-      <!-- Add your content here -->
-    </div>
-    <div class="col-md-4">
-      <h2>Genres</h2>
-      <!-- Add your content here -->
-    </div>
-  </div>
-</div>
 
-<footer class="footer">
-  <div class="container">
-    <p>&copy; 2023 Your Website Name. All rights reserved.</p>
-  </div>
-</footer>
+<app-content *ngIf="s == ''" ></app-content>
+
+<div class="footer-main mt-3">
+  <app-footer></app-footer>
+</div>
