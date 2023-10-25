@@ -7,7 +7,8 @@ import axios from 'axios';
 export class SpotifyApiService {
   clientID:string = '8f865da74f0a48978dac0b132d482bd6';
   clientSecret:string = '30ff5baebfa5419b988a6793bb432c60';
-  SPOTIFY_API_URL:string = 'https://accounts.spotify.com/api/token';
+  SPOTIFY_API_AUTH_URL:string = 'https://accounts.spotify.com/api/token';
+  SPOTIFY_API_URL:string = 'https://api.spotify.com/v1/';
   constructor() { }
 
   getAccessToken() {
@@ -17,7 +18,16 @@ export class SpotifyApiService {
       'Authorization': 'Basic ' + btoa(this.clientID + ':' + this.clientSecret)
     };
 
-    return axios.post(this.SPOTIFY_API_URL, data, { headers });
+    return axios.post(this.SPOTIFY_API_AUTH_URL, data, { headers });
   }
-  
+  searchQuery(token:string, query:string, type:string) {
+    const headers = {
+      'Authorization': "Bearer " + token
+    }
+    const params = {
+      q: query,
+      type: type
+    }
+    return axios.get(this.SPOTIFY_API_URL + `search?q=${params.q}&type=${params.type}&market=ES&limit=20&offset=0`, {headers})
+  }
 }

@@ -20,8 +20,9 @@
   </div>
 </div>
 
-
-<app-content *ngIf="s == ''" ></app-content>
+<div *ngIf="s == ''">
+  <app-content ></app-content>
+</div>
 
 <div class="footer-main mt-3">
   <app-footer></app-footer>

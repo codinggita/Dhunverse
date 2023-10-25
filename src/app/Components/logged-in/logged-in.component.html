@@ -5,12 +5,41 @@
      <p *ngSwitchCase="''"></p>
      <p class="my-2" style="font-size: 1.5rem; font-weight: bold; text-align: center;" *ngSwitchDefault>Search results for " {{s}} "</p>
   </div>
-  <div class="container">
     <!-- <button (click)="getSongs()">click</button> -->
     <div id="music-list">
-      <app-music-page [musicList]="musicList"></app-music-page>
+      <!-- <app-music-page [musicList]="musicList"></app-music-page> -->
+      <ng-container *ngFor="let artist of artistList;"> 
+        <div *ngIf="artist.images[0].url != undefined" class="d-flex flex-row mb-3 mt-2 align-items-center justify-content-center">
+          <!-- <div class="p-2">{{i}}</div>
+          <div class="p-2">{{i + 1}}</div>
+          <div class="p-2">{{i + 2}}</div> -->
+          <div *ngIf="artist != undefined" class="w-75">
+            <div class="card m-4" style="min-width: 25vw;">
+              <div class="row">
+                <div class="col-12 col-lg-5 col-md-7 col-sm-12">
+                  <img [src]="artist.images[0].url" style="height: 100%;" class="card-img-top img-fluid img-thumbnail" alt="...">
+                </div>
+                <div class="col-12 col-lg-7 col-md-5 col-sm-12">
+
+                  <div class="card-body p-auto">
+                    <h5 *ngIf="artist.name != undefined " class="card-title mb-3 fs-4 text-center">{{artist.name}}</h5>
+                    <div class="container-fluid">
+                      <span  *ngFor="let genre of artist.genres;" class="badge rounded-pill p-2 bg-primary me-1 mb-2">{{genre}}</span>
+                    </div>
+                    <h3 class="mb-3">Followers : {{artist.followers.total}}</h3>
+                    <div class="container mt-5">
+                      <button class="btn btn-primary p-2 w-50 text-center text-white fw-bold" (click)="handleArtist(artist.id)">View Artist</button>
+                    </div>
+                    <!-- <p class="card-text fs-6 text-center">Duration ~ {{music.duration}}s</p> -->
+                  </div>
+                </div>
+              </div>
+              <!-- <audio class="pb-2 w-100" controls src="{{music.preview}}"></audio> -->
+            </div>
+          </div>
+        </div>
+      </ng-container>
     </div>
-  </div>
 </div>
 
 <app-footer></app-footer>
