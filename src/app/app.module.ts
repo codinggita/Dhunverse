@@ -14,6 +14,7 @@ import { NavbarMkainComponent } from './SpotifyComponents/navbar-mkain/navbar-mk
 import { AboutPageComponent } from './Components/about-page/about-page.component';
 import { FooterComponent } from './Components/footer/footer.component';
 import { ContentComponent } from './Components/content/content.component';
+import { ArtistPageComponent } from './SpotifyComponents/artist-page/artist-page.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { ContentComponent } from './Components/content/content.component';
     AboutPageComponent,
     FooterComponent,
     ContentComponent,
+    ArtistPageComponent,
   ],
   imports: [
     BrowserModule,
