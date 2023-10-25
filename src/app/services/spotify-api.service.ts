@@ -28,6 +28,6 @@ export class SpotifyApiService {
       q: query,
       type: type
     }
-    return axios.get(this.SPOTIFY_API_URL + `search?q=${params.q}&type=${params.type}&market=ES&limit=10&offset=5`, {headers})
+    return axios.get(this.SPOTIFY_API_URL + `search?q=${params.q}&type=${params.type}&market=ES&limit=20&offset=0`, {headers})
   }
 }

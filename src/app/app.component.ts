@@ -14,13 +14,13 @@ export class AppComponent implements OnInit {
   // }
   ngOnInit() {
     $(window).on('load', () => {
-      this.router.navigateByUrl('')
+      // this.router.navigateByUrl('')
       setTimeout(() => {
-        $(".main-loader").slideUp(1000, () => {
+        $(".main-loader").slideUp(10, () => {
           // Animation duration set to 1 second (1000 milliseconds)
           $(".main-loader").remove(); // Remove the loader after the animation
         });
-      }, 2000); // Delay for 2 seconds (2000 milliseconds) before starting the animation
+      }, 20); // Delay for 2 seconds (2000 milliseconds) before starting the animation
     });
   }
 }

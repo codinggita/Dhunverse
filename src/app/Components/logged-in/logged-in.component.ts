@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { DataSharingServiceService } from 'src/app/services/data-sharing-service.service';
-import { MusicApiService } from 'src/app/services/music-api.service';
 import { SpotifyApiService } from 'src/app/services/spotify-api.service';
 import { TokenSharingService } from 'src/app/services/token-sharing.service';
 
@@ -12,26 +12,29 @@ import { TokenSharingService } from 'src/app/services/token-sharing.service';
 export class LoggedInComponent {
   username:string;
   accesstoken:string;
-  constructor(private dataSharing: DataSharingServiceService, private spotifyApi: SpotifyApiService, private tokenSharing: TokenSharingService) {
+  constructor(private router: Router, private dataSharing: DataSharingServiceService, private spotifyApi: SpotifyApiService, private tokenSharing: TokenSharingService) {
     this.username = this.dataSharing.data;
     this.accesstoken = this.tokenSharing.token;
   }
   s = '';
-  musicList:any = []
+  artistList:any = []
   onChange(Search: string){
     // console.log(this.accesstoken? this.accesstoken: "hnofdlkfj");
     this.s = Search;
     if(this.s != ""){
-      this.spotifyApi.searchQuery(this.accesstoken, this.s, "album")
+      this.spotifyApi.searchQuery(this.accesstoken, this.s, "artist")
         .then(response => {
-          this.musicList = (response.data.albums.items)
-          console.log(this.musicList);
+          this.artistList = (response.data.artists.items)
+          console.log(this.artistList);
 
         })
         .catch(error => {
           console.log(error);
         });
     }
+  }
+  handleArtist(artistID:string){
+    this.router.navigateByUrl(`artist/${artistID}`)
   }
 
 }
