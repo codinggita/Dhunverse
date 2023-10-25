@@ -8,7 +8,25 @@
   <div class="container">
     <!-- <button (click)="getSongs()">click</button> -->
     <div id="music-list">
-      <app-music-page [musicList]="musicList"></app-music-page>
+      <!-- <app-music-page [musicList]="musicList"></app-music-page> -->
+      <ng-container *ngFor="let music of musicList; index as i"> 
+        <div class="d-flex flex-row mb-3 mt-2">
+          <!-- <div class="p-2">{{i}}</div>
+          <div class="p-2">{{i + 1}}</div>
+          <div class="p-2">{{i + 2}}</div> -->
+          <div *ngIf="music != undefined">
+            <div class="card m-4" style="min-width: 25vw;">
+              <img *ngIf="music.images[0].url != undefined " [src]="music.images[0].url" class="card-img-top img-fluid img-thumbnail" alt="...">
+              <div class="card-body p-auto">
+                <h5 *ngIf="music.name != undefined " class="card-title fs-4 text-center">{{music.name}}</h5>
+                <p *ngIf="music.artists != undefined " class="card-text fs-6 text-center">By {{music.artists[0].name}}</p>
+                <!-- <p class="card-text fs-6 text-center">Duration ~ {{music.duration}}s</p> -->
+              </div>
+              <!-- <audio class="pb-2 w-100" controls src="{{music.preview}}"></audio> -->
+            </div>
+          </div>
+        </div>
+      </ng-container>
     </div>
   </div>
 </div>

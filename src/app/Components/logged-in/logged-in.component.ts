@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { DataSharingServiceService } from 'src/app/services/data-sharing-service.service';
 import { MusicApiService } from 'src/app/services/music-api.service';
+import { SpotifyApiService } from 'src/app/services/spotify-api.service';
 import { TokenSharingService } from 'src/app/services/token-sharing.service';
 
 @Component({
@@ -11,22 +12,26 @@ import { TokenSharingService } from 'src/app/services/token-sharing.service';
 export class LoggedInComponent {
   username:string;
   accesstoken:string;
-  constructor(private dataSharing: DataSharingServiceService, private MusicApiService: MusicApiService, private tokenSharing: TokenSharingService) {
+  constructor(private dataSharing: DataSharingServiceService, private spotifyApi: SpotifyApiService, private tokenSharing: TokenSharingService) {
     this.username = this.dataSharing.data;
     this.accesstoken = this.tokenSharing.token;
   }
   s = '';
-  musicList = []
+  musicList:any = []
   onChange(Search: string){
-    console.log(this.accesstoken? this.accesstoken: "hnofdlkfj");
+    // console.log(this.accesstoken? this.accesstoken: "hnofdlkfj");
     this.s = Search;
-    this.MusicApiService.getSearchMusic(this.s)
-      .then(response => {
-        this.musicList = (response.data.data)
-      })
-      .catch(error => {
-        console.log(error);
-      });
+    if(this.s != ""){
+      this.spotifyApi.searchQuery(this.accesstoken, this.s, "album")
+        .then(response => {
+          this.musicList = (response.data.albums.items)
+          console.log(this.musicList);
+
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    }
   }
 
 }
