@@ -11,8 +11,9 @@ import { TokenSharingService } from 'src/app/services/token-sharing.service';
 export class ArtistPageComponent implements OnInit {
   id: any;
   albumList: any = [];
+  artistInfo: any = [];
   token:string;
-  constructor(private route: ActivatedRoute, private spotifyService: SpotifyApiService, private tokenShared: TokenSharingService){
+  constructor(private route: ActivatedRoute, private spotifyService: SpotifyApiService, private tokenShared: TokenSharingService, private router: Router){
     this.token = this.tokenShared.token;
     this.id = this.route.snapshot.paramMap.get('id');
     // console.log(this.token)
@@ -26,5 +27,18 @@ export class ArtistPageComponent implements OnInit {
     .catch(error => {
       console.log(error);
     });
+
+    this.spotifyService.searchArtist(this.token, this.id)
+    .then(async response => {
+      this.artistInfo = await (response.data)
+      // console.log(this.albumList)
+    })
+    .catch(error => {
+      console.log(error);
+    });
   }
+  handleBack(){
+    this.router.navigateByUrl('/main')
+  }
+
 }

@@ -37,4 +37,12 @@ export class SpotifyApiService {
     console.log(id, " ", token);
     return axios.get(this.SPOTIFY_API_URL + `artists/${id}/albums?limit=50&market=ES&offset=0`, {headers})
   }
+  
+  searchArtist(token:string, id:string){
+    const headers = {
+      'Authorization': "Bearer " + token
+    }
+    console.log(id, " ", token);
+    return axios.get(this.SPOTIFY_API_URL + `artists/${id}`, {headers})
+  }
 }

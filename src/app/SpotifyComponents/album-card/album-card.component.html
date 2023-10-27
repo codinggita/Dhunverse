@@ -1,0 +1,26 @@
+<div *ngIf="album.images[0].url != undefined" class="d-flex flex-row mb-3 mt-2 align-items-center justify-content-center">
+  <!-- <div class="p-2">{{i}}</div>
+  <div class="p-2">{{i + 1}}</div>
+  <div class="p-2">{{i + 2}}</div> -->
+  <div *ngIf="album != undefined">
+    <div class="card m-4">
+          <img [src]="album.images[0].url" style="height: 100%;" class="card-img-top img-fluid img-thumbnail" alt="...">
+      
+
+          <div class="card-body p-auto">
+            <h5 *ngIf="album.name != undefined " class="card-title mb-3 fs-4 text-center">{{album.name}}</h5>
+            <div class="container-fluid">
+              <span  *ngFor="let artist of album.artists;" class="badge rounded-pill p-2 bg-primary me-1 mb-2">{{artist.name}}</span>
+            </div>
+            <h3 class="mb-3">Released on : {{album.release_date}}</h3>
+            <h3 class="mb-3">No of tracks : {{album.total_tracks}}</h3>
+            <div class="container mt-5">
+              <button class="btn btn-primary p-2 w-50 text-center text-white fw-bold" >View Album</button>
+            </div>
+            <!-- <p class="card-text fs-6 text-center">Duration ~ {{music.duration}}s</p> -->
+          
+      </div>
+      <!-- <audio class="pb-2 w-100" controls src="{{music.preview}}"></audio> -->
+    </div>
+  </div>
+</div>

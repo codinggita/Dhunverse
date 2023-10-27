@@ -15,6 +15,7 @@ import { AboutPageComponent } from './Components/about-page/about-page.component
 import { FooterComponent } from './Components/footer/footer.component';
 import { ContentComponent } from './Components/content/content.component';
 import { ArtistPageComponent } from './SpotifyComponents/artist-page/artist-page.component';
+import { AlbumCardComponent } from './SpotifyComponents/album-card/album-card.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { ArtistPageComponent } from './SpotifyComponents/artist-page/artist-page
     FooterComponent,
     ContentComponent,
     ArtistPageComponent,
+    AlbumCardComponent,
   ],
   imports: [
     BrowserModule,
