@@ -6,7 +6,7 @@
      <p class="my-2" style="font-size: 1.5rem; font-weight: bold; text-align: center;" *ngSwitchDefault>Search results for " {{s}} "</p>
   </div>
     <!-- <button (click)="getSongs()">click</button> -->
-    <div id="music-list">
+    <div id="artist-list">
       <!-- <app-music-page [musicList]="musicList"></app-music-page> -->
       <ng-container *ngFor="let artist of artistList;"> 
         <div *ngIf="artist.images[0].url != undefined" class="d-flex flex-row mb-3 mt-2 align-items-center justify-content-center">
