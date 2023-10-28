@@ -1,10 +1,10 @@
-<div *ngIf="album.images[0].url != undefined" class="d-flex flex-row mb-3 mt-2 align-items-center justify-content-center">
+<div class="d-flex flex-row mb-3 mt-2 align-items-center justify-content-center">
   <!-- <div class="p-2">{{i}}</div>
   <div class="p-2">{{i + 1}}</div>
   <div class="p-2">{{i + 2}}</div> -->
   <div *ngIf="album != undefined">
-    <div class="card m-4">
-          <img [src]="album.images[0].url" style="height: 100%;" class="card-img-top img-fluid img-thumbnail" alt="...">
+    <div class="card m-4 dv-grow">
+          <img *ngIf="album.images[0].url != undefined" [src]="album.images[0].url" style="height: 100%;" class="card-img-top img-fluid img-thumbnail" alt="...">
       
 
           <div class="card-body p-auto">
