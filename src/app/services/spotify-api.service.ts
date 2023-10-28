@@ -42,7 +42,7 @@ export class SpotifyApiService {
     const headers = {
       'Authorization': "Bearer " + token
     }
-    console.log(id, " ", token);
+    // console.log(id, " ", token);
     return axios.get(this.SPOTIFY_API_URL + `artists/${id}`, {headers})
   }
 }

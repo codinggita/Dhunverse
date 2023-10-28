@@ -1,0 +1,5 @@
+.dv-grow:active,
+.dv-grow:focus,
+.dv-grow:hover {
+  box-shadow: 4px 4px 7px rgb(47, 44, 78);
+}

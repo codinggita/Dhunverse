@@ -16,11 +16,11 @@ export class AppComponent implements OnInit {
     $(window).on('load', () => {
       // this.router.navigateByUrl('')
       setTimeout(() => {
-        $(".main-loader").slideUp(10, () => {
+        $(".main-loader").slideUp(1000, () => {
           // Animation duration set to 1 second (1000 milliseconds)
           $(".main-loader").remove(); // Remove the loader after the animation
         });
-      }, 20); // Delay for 2 seconds (2000 milliseconds) before starting the animation
+      }, 2000); // Delay for 2 seconds (2000 milliseconds) before starting the animation
     });
   }
 }
