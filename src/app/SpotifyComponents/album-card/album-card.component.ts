@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-album-card',
@@ -7,5 +8,9 @@ import { Component, Input } from '@angular/core';
 })
 export class AlbumCardComponent {
   @Input() album:any;
+  constructor(private router : Router){}
+  handleClick(id:string){
 
+    this.router.navigateByUrl(`/album/${id}`)
+  }
 }
