@@ -45,4 +45,12 @@ export class SpotifyApiService {
     // console.log(id, " ", token);
     return axios.get(this.SPOTIFY_API_URL + `artists/${id}`, {headers})
   }
+
+  searchAlbum(token:string, id:string) {
+    const headers = {
+      'Authorization' : "Bearer " + token
+    } 
+    return axios.get(this.SPOTIFY_API_URL + `albums/${id}/tracks`, {headers})
+  }
+
 }
