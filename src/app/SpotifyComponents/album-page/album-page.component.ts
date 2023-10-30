@@ -38,4 +38,8 @@ export class AlbumPageComponent implements OnInit {
       audioPlayer.play();
       $('#footer-track h2').text('Now Playing: ' + track_name);
   }
+
+  handleBack(){
+    this.router.navigateByUrl("/main")
+  }
 }
