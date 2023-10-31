@@ -1,6 +1,6 @@
 <!-- <router-outlet></router-outlet> -->
 <app-navbar (newItemEvent)="onChange($event)"></app-navbar>
-<div class="jumbotron container-fluid p-4 bg-secondary">
+<div class="jumbotron container-fluid p-4 pb-5 bg-secondary">
   <h1 class="display-4">Discover and Stream Music</h1>
   <p class="lead">Your favorite tracks, anytime, anywhere.</p>
   <a class="btn btn-primary btn-lg" routerLink="/login" role="button">Get Started</a>
@@ -20,7 +20,7 @@
   </div>
 </div>
 
-<div *ngIf="s == ''">
+<div class="mb-5" *ngIf="s == ''">
   <app-content ></app-content>
 </div>
 
