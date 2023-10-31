@@ -3,7 +3,7 @@
   <div class="p-2">{{i + 1}}</div>
   <div class="p-2">{{i + 2}}</div> -->
   <div *ngIf="album != undefined">
-    <div class="card m-4 dv-grow">
+    <div class="card m-4 dv-grow dv-main-card">
           <img *ngIf="album.images[0].url != undefined" [src]="album.images[0].url" style="height: 100%;" class="card-img-top img-fluid img-thumbnail" alt="...">
       
 
