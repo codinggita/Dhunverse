@@ -1,35 +1,123 @@
-<div class="container align-items-center">
-  <button class="btn btn-primary p-2" (click)="handleBack()">Go back</button>
-</div>
-
-<div class="container">
-  <h1>Audio Tracks</h1>
-  <div *ngFor="let track of trackList; index as i" class="row" id="track-list">
-    <div class="col-12 mb-3">
-      <div class="card">
-          <div class="card-body  d-flex flex-row">
-            <div>
-              <h5 class="card-title p-2 me-auto">{{track.name}}</h5>
-              <h6 class="card-title p-2 me-auto">By: <span  *ngFor="let artist of track.artists">{{artist.name}} | </span></h6>
-            </div>
-              <p class="card-text p-2 me-auto">Duration: {{track.duration_ms}}</p>
-              <button *ngIf="track.preview_url!==null" class="btn btn-primary play-button px-4 ms-auto" (click)="handlePlay(track.preview_url, track.name)">Play</button>
-              <button *ngIf="track.preview_url===null" class="btn btn-primary play-button px-4 ms-auto" disabled>Play</button>
-          </div>
+<div class="main">
+  <div class="main-content pb-5">
+    <div class="container-fluid">
+      <div
+        class="container-fluid d-flex justify-content-center align-items-center"
+      >
+        <h1 class="text-align-center me-5">Audio Tracks</h1>
+        <button class="btn btn-primary p-2 float-end" (click)="handleBack()">
+          Go Home
+        </button>
       </div>
-  </div>
-  </div>
-</div>
-
-<div class="container-fluid bg-dark text-white fixed-bottom">
-  <div class="container">
-      <div class="row">
-          <div class="col-12">
-              <div id="footer-track">
-                  <h2>Now Playing</h2>
-                  <audio controls id="audio-player"></audio>
+      <div *ngFor="let track of trackList; index as i" id="track-list">
+        <div class="mb-3">
+          <div data-aos="zoom-in" data-aos-duration="500" class="card">
+            <div class="card-body row">
+              <div class="col-lg-7 col-md-7 col-sm-12 col-12">
+                <h5 class="card-title p-2 me-auto">{{ track.name }}</h5>
+                <h6 class="card-title p-2 me-auto">
+                  By:
+                  <span *ngFor="let artist of track.artists"
+                    >{{ artist.name }} |
+                  </span>
+                </h6>
               </div>
+              <div class="col-lg-3 col-md-3 d-flex col-sm-6 col-6">
+                <p class="card-text p-2 align-self-center me-auto">
+                  Duration: {{ track.duration_ms }}
+                </p>
+              </div>
+              <div class="col-lg-2 col-md-2 d-flex col-sm-6 col-6">
+                <button
+                  *ngIf="track.preview_url !== null"
+                  class="btn btn-primary align-self-center play-button w-100 ms-auto"
+                  (click)="
+                    handlePlay(
+                      track.preview_url,
+                      track.name,
+                      track.artists[0].name
+                    )
+                  "
+                >
+                  Play
+                </button>
+                <button
+                  *ngIf="track.preview_url === null"
+                  class="btn btn-danger play-button w-100 ms-auto"
+                  (click)="
+                    handlePlay(
+                      track.preview_url,
+                      track.name,
+                      track.artists[0].name
+                    )
+                  "
+                >
+                  Play
+                </button>
+              </div>
+            </div>
           </div>
+        </div>
+      </div>
+    </div>
+    <div
+      style="border-radius: 10%"
+      class="container p-2 d-flex flex-row justify-content-center align-items-center pb-5"
+    >
+      <h3>Made in India</h3>
+    </div>
+  </div>
+
+  <div class="mt-5 footer container-fluid bg-dark text-white fixed-bottom">
+      <div class="row">
+        <div id="footer-track" class="col-lg-5 col-md-4 col-sm-12 col-12 mb-2">
+          <div>
+            <h2 class="mb-0" id="footer-track">Click track to play song</h2>
+            <p class="mb-0" *ngIf="flag === 1" id="footer-artist"></p>
+          </div>
+        </div>
+        <div
+          class="col-lg-3 col-md-4 col-sm-12 col-12 d-flex justify-content-center flex-row mb-2"
+        >
+          <audio
+            *ngIf="flag === 1"
+            controls
+            id="audio-player"
+            class="audio-player align-self-center"
+          ></audio>
+        </div>
+        <div
+          *ngIf="flag === 1"
+          class="audio-controls col-lg-4 col-md-4 col-sm-12 col-12 d-flex justify-content-center align-self-center mb-2"
+        >
+          <!-- <button class="btn btn-dark p-2"></button>
+          <button class="btn btn-dark p-2"></button>
+          <button class="btn btn-dark p-2"></button> -->
+          <button
+            class="btn btn-light p-1 ms-3 mb-2 me-2 align-self-center"
+            onclick="document.getElementById('audio-player').play()"
+          >
+            <i class="fa-solid fa-backward" style="color: #f0f5ff"></i> Play
+          </button>
+          <button
+            class="btn btn-light p-1 me-2 mb-2 align-self-center"
+            onclick="document.getElementById('audio-player').pause()"
+          >
+            <i class="fa-solid fa-play" style="color: #f0f5ff"></i> Pause
+          </button>
+          <button
+            class="btn btn-light p-1 me-2 mb-2 align-self-center"
+            onclick="document.getElementById('audio-player').volume += 0.1"
+          >
+            <i class="fa-solid fa-forward" style="color: #f0f5ff"></i> Vol +
+          </button>
+          <button
+            class="btn btn-light p-1 me-2 mb-2 align-self-center"
+            onclick="document.getElementById('audio-player').volume -= 0.1"
+          >
+            Vol -
+          </button>
+        </div>
       </div>
   </div>
 </div>
