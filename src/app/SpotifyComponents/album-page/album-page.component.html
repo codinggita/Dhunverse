@@ -4,7 +4,7 @@
       <div
         class="container-fluid d-flex justify-content-center align-items-center"
       >
-        <h1 class="text-align-center me-5">Audio Tracks</h1>
+        <h1 class="text-align-center me-5 fw-bold">Audio Tracks</h1>
         <button class="btn btn-primary p-2 float-end" (click)="handleBack()">
           Go Home
         </button>
@@ -43,7 +43,7 @@
                 </button>
                 <button
                   *ngIf="track.preview_url === null"
-                  class="btn btn-danger play-button w-100 ms-auto"
+                  class="btn btn-danger align-self-center play-button w-100 ms-auto"
                   (click)="
                     handlePlay(
                       track.preview_url,

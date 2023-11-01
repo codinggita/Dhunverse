@@ -3,3 +3,8 @@
 .dv-grow:hover {
   box-shadow: 4px 4px 7px rgb(47, 44, 78);
 }
+
+.dv-main-card{
+  background: linear-gradient(180deg, rgba(46,252,255,1) 0%, rgba(255,215,130,1) 100%);
+
+}

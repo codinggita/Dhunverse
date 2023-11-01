@@ -1,45 +1,50 @@
 <app-navbar-mkain [username]="username"  (newItemEvent)="onChange($event)"></app-navbar-mkain>
-<div class="container-fluid pb-5">
+<div class="container-fluid pb-5 main">
   <!-- <app-joke-page></app-joke-page>/ -->
-  <div  class="mt-2" [ngSwitch]="s">
-     <p *ngSwitchCase="''"></p>
-     <p class="my-2" style="font-size: 1.5rem; font-weight: bold; text-align: center;" *ngSwitchDefault>Search results for " {{s}} "</p>
-  </div>
-    <!-- <button (click)="getSongs()">click</button> -->
-    <div id="artist-list">
-      <!-- <app-music-page [musicList]="musicList"></app-music-page> -->
-      <ng-container *ngFor="let artist of artistList;"> 
-        <div class="d-flex flex-row mb-3 mt-2 align-items-center justify-content-center">
-          <!-- <div class="p-2">{{i}}</div>
-          <div class="p-2">{{i + 1}}</div>
-          <div class="p-2">{{i + 2}}</div> -->
-          <div *ngIf="artist != undefined" class="w-75">
-            <div class="dv-grow card m-4" style="min-width: 25vw;">
-              <div class="row">
-                <div class="col-12 col-lg-5 col-md-7 col-sm-12">
-                  <img  *ngIf="artist.images[0] != undefined" [src]="artist.images[0].url" style="height: 100%;" class="card-img-top img-fluid img-thumbnail" alt="...">
-                </div>
-                <div class="col-12 col-lg-7 col-md-5 col-sm-12">
-
-                  <div class="card-body p-auto">
-                    <h4 *ngIf="artist.name != undefined " class="card-title mb-3 fs-3 fw-bolder">{{artist.name}}</h4>
-                    
-                      <span  *ngFor="let genre of artist.genres;" class="badge rounded-pill p-2 bg-primary me-1 mb-2">{{genre}}</span>
-                    
-                    <h4 class="my-3 fs-5">Followers : {{artist.followers.total}}</h4>
-                    <div class="container my-5">
-                      <button class="btn btn-primary p-2 w-50 text-center text-white fw-bold" (click)="handleArtist(artist.id)">View Artist</button>
+  <div *ngIf="s !== ''" class="py-4">
+    <div  class="pt-2" [ngSwitch]="s">
+       <p *ngSwitchCase="''"></p>
+       <p class="py-2 text-light fw-bold" style="font-size: 1.5rem; font-weight: bold; text-align: center;" *ngSwitchDefault>Search results for " {{s}} "</p>
+    </div>
+      <!-- <button (click)="getSongs()">click</button> -->
+      <div id="artist-list">
+        <!-- <app-music-page [musicList]="musicList"></app-music-page> -->
+        <ng-container *ngFor="let artist of artistList;"> 
+          <div class="d-flex flex-row mb-3 mt-2 align-items-center justify-content-center">
+            <!-- <div class="p-2">{{i}}</div>
+            <div class="p-2">{{i + 1}}</div>
+            <div class="p-2">{{i + 2}}</div> -->
+            <div *ngIf="artist != undefined" class="w-75">
+              <div class="dv-grow dv-artist-card card m-4" style="min-width: 25vw;">
+                <div class="row">
+                  <div class="col-12 col-lg-5 col-md-7 col-sm-12">
+                    <img  *ngIf="artist.images[0] != undefined" [src]="artist.images[0].url" style="height: 100%;" class="card-img-top img-fluid img-thumbnail" alt="...">
+                  </div>
+                  <div class="col-12 col-lg-7 col-md-5 col-sm-12">
+  
+                    <div class="card-body p-auto">
+                      <h4 *ngIf="artist.name != undefined " class="card-title text-white mb-3 fs-3 fw-bolder">{{artist.name}}</h4>
+                      
+                        <span  *ngFor="let genre of artist.genres;" class="badge rounded-pill p-2 bg-info me-1 mb-2 text-dark">{{genre}}</span>
+                      
+                      <h4 class="my-3 fs-5 text-white">Followers : {{artist.followers.total}}</h4>
+                      <div class="container my-5">
+                        <button class="btn btn-info p-2 w-50 text-center text-dark fw-bold" (click)="handleArtist(artist.id)">View Artist</button>
+                      </div>
+                      <!-- <p class="card-text fs-6 text-center">Duration ~ {{music.duration}}s</p> -->
                     </div>
-                    <!-- <p class="card-text fs-6 text-center">Duration ~ {{music.duration}}s</p> -->
                   </div>
                 </div>
+                <!-- <audio class="pb-2 w-100" controls src="{{music.preview}}"></audio> -->
               </div>
-              <!-- <audio class="pb-2 w-100" controls src="{{music.preview}}"></audio> -->
             </div>
           </div>
-        </div>
-      </ng-container>
-    </div>
+        </ng-container>
+      </div>
+  </div>
+  <div class="vh-100" *ngIf="s === ''">
+    <h1>Welcome</h1>
+  </div>
 </div>
 
 <app-footer></app-footer>
