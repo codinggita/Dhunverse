@@ -1,12 +1,27 @@
 .jumbotron {
-  background-image: url('../../assets/LinkedIn-Background-Photo-19-1.webp'); /* Replace with your image */
-  background-size: cover;
+  background-image: url('../../assets/network-sound-waves.png'), linear-gradient(rgb(192, 190, 190) 50%, black 100%); 
+  background-size:contain;
   background-position: center;
-  color: #ffffff;
   text-align: center;
 }
 
 .footer-main{
   position: relative;
   height: 100%;
+}
+.display-4{
+    font-size: 72px;
+    background: -webkit-linear-gradient(rgb(113, 138, 250), #173158);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.main-content{
+  background: linear-gradient(180deg, rgba(249,252,255,1) 0%, rgba(180,180,180,1) 40%, rgba(148,148,148,1) 70%, rgba(108,108,108,1) 100%);
+
+}
+.main-content2{
+  background: linear-gradient(180deg, rgb(121, 120, 120) 0%, rgb(85, 85, 85) 40%, rgb(54, 54, 54) 100%);
+
 }

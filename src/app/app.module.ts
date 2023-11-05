@@ -33,12 +33,12 @@ import { AlbumPageComponent } from './SpotifyComponents/album-page/album-page.co
     ContentComponent,
     ArtistPageComponent,
     AlbumCardComponent,
-    AlbumPageComponent,
+    AlbumPageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

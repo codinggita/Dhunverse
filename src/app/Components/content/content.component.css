@@ -1,0 +1,6 @@
+#demo1{
+  background: -webkit-linear-gradient(rgb(229, 174, 255), rgb(137, 104, 153));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
