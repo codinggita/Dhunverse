@@ -1,11 +1,11 @@
 <!-- <router-outlet></router-outlet> -->
 <app-navbar (newItemEvent)="onChange($event)"></app-navbar>
-<div class="jumbotron container-fluid p-4 pb-5 bg-secondary">
+<div class="jumbotron container-fluid p-4 pb-5">
   <h1 class="display-4">Discover and Stream Music</h1>
-  <p class="lead">Your favorite tracks, anytime, anywhere.</p>
-  <a class="btn btn-primary btn-lg" routerLink="/login" role="button">Get Started</a>
+  <p class="lead" style="color: rgb(38, 87, 87);">Your favorite tracks, anytime, anywhere.</p>
+  <a class="btn btn-info btn-lg text-white fw-bold" routerLink="/login" role="button">Get Started</a>
 </div>
-<div class="container-fluid bg-secondary">
+<div class="container-fluid main-content2">
   <!-- <app-joke-page></app-joke-page>/ -->
   
   <div [ngSwitch]="s">
@@ -14,16 +14,16 @@
   </div>
   <div *ngIf="s != ''" class="container">
     <!-- <button (click)="getSongs()">click</button> -->
-    <div id="music-list">
+    <div id="music-list" class="pb-5">
       <app-music-page [musicList]="musicList"></app-music-page>
     </div>
   </div>
 </div>
 
-<div class="mb-5" *ngIf="s == ''">
+<div class="main-content pb-5" *ngIf="s == ''">
   <app-content ></app-content>
 </div>
 
-<div class="footer-main mt-3">
+<div class="footer-main">
   <app-footer></app-footer>
 </div>

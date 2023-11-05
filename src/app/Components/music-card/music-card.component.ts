@@ -1,11 +1,11 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-music-card',
   templateUrl: './music-card.component.html',
   styleUrls: ['./music-card.component.css']
 })
-export class MusicCardComponent {
+export class MusicCardComponent  {
   @Input() music:any;
   duration:string='';
 
@@ -15,5 +15,4 @@ export class MusicCardComponent {
   onClick(){
     console.log(this.music)
   }
-  
 }
