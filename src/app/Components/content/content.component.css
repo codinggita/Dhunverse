@@ -4,3 +4,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+.carousel-control-next,
+.carousel-control-prev, .carousel-indicators {
+    filter: invert(100%);
+}
