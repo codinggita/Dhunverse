@@ -4,7 +4,7 @@
   <div *ngIf="s !== ''" class="py-4">
     <div  class="pt-2" [ngSwitch]="s">
        <p *ngSwitchCase="''"></p>
-       <p class="py-2 text-light fw-bold" style="font-size: 1.5rem; font-weight: bold; text-align: center;" *ngSwitchDefault>Search results for " {{s}} "</p>
+       <p class="py-2 text-dark fw-bold" style="font-size: 1.5rem; font-weight: bold; text-align: center;" *ngSwitchDefault>Search results for " {{s}} "</p>
     </div>
       <!-- <button (click)="getSongs()">click</button> -->
       <div id="artist-list">
@@ -42,8 +42,8 @@
         </ng-container>
       </div>
   </div>
-  <div class="vh-100" *ngIf="s === ''">
-    <h1>Welcome</h1>
+  <div class=" mb-5" *ngIf="s === ''">
+    <app-content></app-content>
   </div>
 </div>
 
