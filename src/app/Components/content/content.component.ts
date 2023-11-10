@@ -6,7 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./content.component.css']
 })
 export class ContentComponent implements OnInit  {
-  txt = 'Welcome';
+  txtArray = ['Welcome,', 'Namaste,', 'Sasria Kal,', ' Bienvenue,', 'Benvenuto/a,', 'Välkommen,' ];
+  currentTxtIndex = 0;
+  currentTxt = this.txtArray[this.currentTxtIndex];
   text2 = ' Dhunverse';
   speed = 200;
   ch: any;
@@ -21,11 +23,11 @@ export class ContentComponent implements OnInit  {
   typeWriter() {
     let i = 0;
     const intervalId = setInterval(() => {
-      if (i < this.txt.length) {
-        this.ch.innerHTML += this.txt.charAt(i);
+      if (i < this.currentTxt.length) {
+        this.ch.innerHTML += this.currentTxt.charAt(i);
         i++;
       } else {
-        clearInterval(intervalId); 
+        clearInterval(intervalId); // Stop typing
         this.clearText();
       }
     }, this.speed);
@@ -34,14 +36,18 @@ export class ContentComponent implements OnInit  {
   clearText() {
     let text = this.ch.innerHTML;
     if (text.length > 0) {
-      text = text.slice(0, -1); 
+      text = text.slice(0, -1); // Remove the last character
       this.ch.innerHTML = text;
       setTimeout(() => {
-        this.clearText(); 
-      }, this.speed / 2); 
+        this.clearText(); // Recursively clear one character at a time
+      }, this.speed / 2); // Adjust the speed for a smooth erasing effect
     } else {
+      // Move to the next text in the array
+      this.currentTxtIndex = (this.currentTxtIndex + 1) % this.txtArray.length;
+      this.currentTxt = this.txtArray[this.currentTxtIndex];
+
       setTimeout(() => {
-        this.typeWriter(); 
+        this.typeWriter(); // Start typing the next text
       }, this.speed);
     }
   }

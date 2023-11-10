@@ -25,14 +25,19 @@ export class LoginComponent implements OnInit {
     this.router.navigateByUrl('');
   }
   async handleEnter(data:string){
-    await this.spotifyApi.getAccessToken().then(async response => {
-      console.log(response.data.access_token);
-      this.tokenSharing.token = await response.data.access_token;
-    })
-    .catch(error => {
-      console.error('Error:', error);
-    });
-    this.dataSharing.data = data;
-    this.router.navigateByUrl('main');
+    if(data == ''){
+      alert("Enter the username")
+    }
+    else{
+      await this.spotifyApi.getAccessToken().then(async response => {
+        console.log(response.data.access_token);
+        this.tokenSharing.token = await response.data.access_token;
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+      this.dataSharing.data = data;
+      this.router.navigateByUrl('main');
+    }
   }
 }

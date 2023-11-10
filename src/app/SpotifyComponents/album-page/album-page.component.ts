@@ -15,6 +15,7 @@ export class AlbumPageComponent implements OnInit {
   token:string = ''
   trackList:any = []
   flag = 0;
+  flag2 = 0;
   constructor(private route: ActivatedRoute, private spotifyService: SpotifyApiService, private tokenShared: TokenSharingService, private router: Router){
     this.token = this.tokenShared.token;
     this.id = this.route.snapshot.paramMap.get('id');
@@ -39,6 +40,7 @@ export class AlbumPageComponent implements OnInit {
     const audioPlayer = document.getElementById('audio-player') as HTMLAudioElement;
     if(url !== null){
       this.flag = 1;
+      this.flag2 = 1;
       audioPlayer.src = url;
       audioPlayer.play();
       $('#footer-track h2').text('Now Playing: ' + track_name);
@@ -52,5 +54,16 @@ export class AlbumPageComponent implements OnInit {
 
   handleBack(){
     this.router.navigateByUrl("/main")
+  }
+
+  handlePause(){
+    var audiop = document.getElementById('audio-player') as HTMLAudioElement
+    this.flag2 = 0;
+    audiop.pause()
+  }
+  handlePlay2(){
+    var audiop = document.getElementById('audio-player') as HTMLAudioElement
+    this.flag2 = 1;
+    audiop.play()
   }
 }

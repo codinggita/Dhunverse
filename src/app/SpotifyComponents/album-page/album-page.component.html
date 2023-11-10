@@ -60,14 +60,17 @@
         </div>
       </div>
     </div>
+    <div *ngIf="flag === 1 && flag2 === 1" class="container giff">
+      <img class="img-thumbnail img-fluid w-100" style="height: 20vh;" src="../../../assets/music.gif" alt="Playing">
+    </div>
     <div
       style="border-radius: 10%"
-      class="container p-2 d-flex flex-row justify-content-center align-items-center pb-5"
+      class="container p-2 text-center b-5 pb-5"
     >
       <h3>Made in India</h3>
     </div>
   </div>
-
+  
   <div class="mt-5 footer container-fluid bg-dark text-white fixed-bottom">
       <div class="row">
         <div id="footer-track" class="col-lg-5 col-md-4 col-sm-12 col-12 mb-2">
@@ -95,13 +98,13 @@
           <button class="btn btn-dark p-2"></button> -->
           <button
             class="btn btn-light p-1 ms-3 mb-2 me-2 align-self-center"
-            onclick="document.getElementById('audio-player').play()"
+            (click)="handlePlay2()"
           >
             <i class="fa-solid fa-backward" style="color: #f0f5ff"></i> Play
           </button>
           <button
             class="btn btn-light p-1 me-2 mb-2 align-self-center"
-            onclick="document.getElementById('audio-player').pause()"
+            (click)="handlePause()"
           >
             <i class="fa-solid fa-play" style="color: #f0f5ff"></i> Pause
           </button>

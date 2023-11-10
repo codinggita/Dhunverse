@@ -4,7 +4,7 @@
   top: 0;
   width: 100%;
   height: 100%;
-  z-index: 9999;
+  z-index: 99999;
   background: url('../assets/Untitled_prev_ui.png') no-repeat center, linear-gradient(to bottom, #aab1b8, #3c3d3d);
   background-size:250px;
 }
