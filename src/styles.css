@@ -12,7 +12,7 @@
 .dv-grow:active,
 .dv-grow:focus,
 .dv-grow:hover {
-  box-shadow: 4px 4px 7px whitesmoke;
+  box-shadow: 2px 2px 7px whitesmoke;
   -webkit-transform: scale(1.01);
   transform: scale(1.01);
 }

@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { MusicApiService } from '../services/music-api.service';
+import { SearchFocusService } from '../services/search-focus.service';
 
 @Component({
   selector: 'app-app-main',
@@ -19,5 +20,12 @@ export class AppMainComponent {
         console.log(error);
       });
   }
-  constructor(private MusicApiService: MusicApiService){}
+  constructor(private MusicApiService: MusicApiService, private searchService: SearchFocusService){}
+  @HostListener('document:keydown', ['$event'])
+  handleKeyboardEvent(event: KeyboardEvent) {
+    if (event.key === '?') {
+      event.preventDefault();
+      this.searchService.focusSearchBar();
+    }
+  }
 }
