@@ -20,6 +20,9 @@ export class AppComponent implements OnInit {
       if(this.href == '/'){
         this.router.navigateByUrl('/')
       }
+      else if(this.href == '/about'){
+        this.router.navigateByUrl('/about')
+      }
       else{
         this.router.navigateByUrl('/login')
       }

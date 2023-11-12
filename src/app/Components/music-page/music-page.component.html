@@ -1,12 +1,6 @@
-<ng-container *ngFor="let music of musicList; index as i"> 
-  <div *ngIf="i % 3 == 0" class="d-flex flex-row mb-3 mt-2">
-    <!-- <div class="p-2">{{i}}</div>
-    <div class="p-2">{{i + 1}}</div>
-    <div class="p-2">{{i + 2}}</div> -->
-    <div data-aos="fade-up" data-aos-duration="2500" data-aos-anchor-placement="top-bottom" class="row">
-      <div class="col-sm-12 col-md-4 col-lg-4 col-12"><app-music-card [music]="musicList[i]"></app-music-card></div>
-      <div class="col-sm-12 col-md-4 col-lg-4 col-12"><app-music-card [music]="musicList[i+1]"></app-music-card></div>
-      <div class="col-sm-12 col-md-4 col-lg-4 col-12"><app-music-card [music]="musicList[i+2]"></app-music-card></div>
-    </div>
+
+<div class="mb-3 mt-2">
+  <div data-aos="fade-up" data-aos-duration="2500" data-aos-anchor-placement="top-bottom" class="row row-cols-1 row-cols-md-3 row-cols-lg-3 row-cols-xl-3 g-4">
+    <div *ngFor="let music of musicList" class="col"><app-music-card [music]="music"></app-music-card></div>
   </div>
-</ng-container>
+</div>
