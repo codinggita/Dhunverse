@@ -13,6 +13,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
   search = '';
   constructor(private searchService: SearchFocusService, private elementRef: ElementRef){}
   onChange(){
+    // console.log("hello");
     this.newItemEvent.emit(this.search);
   }
   ngOnInit(): void {
