@@ -7,8 +7,7 @@ Dhunverse is a music streaming platform that allows users to discover music, lis
 2. [Installation](#installation)
 3. [Usage](#usage)
 4. [Support](#support)
-5. [Contributing](#contributing)
-6. [License](#license)
+5. [License](#license)
 
 ## Slogan
 "Your Soundtrack, Anytime, Anywhere"
@@ -22,20 +21,17 @@ Dhunverse is a music streaming platform that allows users to discover music, lis
 - **Social Integration**: Connect with friends and see what they're listening to, and share your music experiences.
 
 ## Installation
-To use Dhunverse, you can visit our [website](https://www.dhunverse.com) and sign up for an account. The platform is accessible through web browsers on various devices.
+To use Dhunverse, you can visit our [website](https://dhunverse.netlify.app/) and sign up for an account. The platform is accessible through web browsers on various devices.
 
 ## Usage
-1. **Sign Up**: Create a Dhunverse account by visiting [Dhunverse](https://www.dhunverse.com) and signing up with your email or social media credentials.
+1. **Sign Up**: Create a Dhunverse account by visiting [Dhunverse](https://dhunverse.netlify.app/) and signing up with your email or social media credentials.
 2. **Log In**: Log in to your Dhunverse account using your registered email or social media credentials.
 3. **Explore**: Browse and search for your favorite music, create playlists, and interact with the community.
 4. **Customize**: Personalize your user profile, discover new music, and connect with other users.
 5. **Listen**: Enjoy your favorite music anytime, anywhere, and curate your playlists for an exceptional listening experience.
 
 ## Support
-If you encounter any issues, have questions, or need assistance, please contact our support team at [support@dhunverse.com](mailto:support@dhunverse.com).
-
-## Contributing
-We welcome contributions from the community! If you'd like to contribute to Dhunverse, please follow our [Contributing Guidelines](CONTRIBUTING.md).
+If you encounter any issues, have questions, or need assistance, please contact our support team at [support@dhunverse.com](mailto:kirtansuniljain1234@gmail.com.com).
 
 ## License
 Dhunverse is licensed under the [MIT License](LICENSE).

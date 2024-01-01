@@ -28,10 +28,9 @@ export class AppComponent implements OnInit {
       }
       setTimeout(() => {
         $(".main-loader").slideUp(1000, () => {
-          // Animation duration set to 1 second (1000 milliseconds)
-          $(".main-loader").remove(); // Remove the loader after the animation
+          $(".main-loader").remove(); 
         });
-      }, 2000); // Delay for 2 seconds (2000 milliseconds) before starting the animation
+      }, 2000); 
     });
   }
 }
